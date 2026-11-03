@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campus Image Viewer</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #eef3f8;
+            text-align: center;
+            margin: 0;
+        }
+        .header {
+            background-color: #29465b;
+            color: white;
+            padding: 20px;
+        }
+        .viewer {
+            width: 650px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px gray;
+        }
+        img {
+            width: 600px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .instructions {
+            margin: 20px;
+            color: #555;
+        }
+
+        #message {
+            font-size: 18px;
+            font-weight: bold;
+            color: #287a4b;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Campus Image Viewer</h1>
+    </div>
+
+    <div class="viewer">
+        <img id="campusImage" src="IMAGES/image1.png">
+        <div class="instructions">
+            Left Arrow - Previous Image |
+            Right Arrow - Next Image |
+            Enter - Select Image
+        </div>
+        <div id="message"></div>
+    </div>
+    <script>
+        var images = [
+            "IMAGES/image1.png",
+            "IMAGES/image2.png",
+            "IMAGES/image3.png"
+        ];
+        var current = 0;
+        document.addEventListener("keydown", function(event) {
+            if (event.key == "ArrowRight") {
+                current++;
+                if (current >= images.length) {
+                    current = 0;
+                }
+                document.getElementById("campusImage").src =
+                    images[current];
+                document.getElementById("message").innerHTML = "";
+            }
+            else if (event.key == "ArrowLeft") {
+                current--;
+
+                if (current < 0) {
+                    current = images.length - 1;
+                }
+                document.getElementById("campusImage").src =
+                    images[current];
+
+                document.getElementById("message").innerHTML = "";
+            }
+            else if (event.key == "Enter") {
+
+                document.getElementById("message").innerHTML =
+                    "Image Selected";
+            }
+        });
+    </script>
+</body>
+</html>

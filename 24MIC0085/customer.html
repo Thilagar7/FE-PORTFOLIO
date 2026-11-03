@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Details</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightgray;
+        }
+        .container {
+            width: 600px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: blue;
+        }
+        h2 {
+            color: darkblue;
+        }
+        input, textarea, select {
+            width: 70%;
+            padding: 8px;
+            margin: 5px 0 15px;
+        }
+        .button {
+            background-color: blue;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Shopping Cart Checkout</h1>
+    <h2 style="text-align:center">Part A - Customer & Delivery Details</h2>
+	
+    <form>
+        <label>Customer Name:</label>
+        <input type="text" required>
+        <label>Email Address:</label>
+        <input type="email" required>
+        <label>Mobile Number:</label>
+        <input type="tel" required>
+        <label>Delivery Address:</label><br>
+        <textarea rows="4" required></textarea><br>
+        <label>City:</label>
+        <input type="text" required><br>
+        <label>State:</label>
+		
+        <select required>
+            <option value="">Select State</option>
+            <option>Tamil Nadu</option>
+            <option>Kerala</option>
+            <option>Karnataka</option>
+            <option>Andhra Pradesh</option>
+            <option>Telangana</option>
+        </select><br>
+		
+        <label>PIN Code:</label>
+        <input type="number" required><br>
+
+        <label>Delivery Date:</label>
+        <input type="date" required>
+
+        <br>
+        <a href="payment.html" class="button">Next: Payment</a>
+
+    </form>
+</div>
+</body>
+</html>

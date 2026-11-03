@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Login Portal</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: white;
+        }
+        .login-box {
+			width: 350px;
+			margin: 25px auto;
+			padding: 25px;
+			background-color:Lightcyan;
+			border: 1px solid black;
+			border-radius: 5px;
+		}
+        h2 {
+            font-family: Georgia;
+            font-style: italic;
+        }
+        audio {
+			width: 300px;
+		}
+
+		input[type="text"],
+		input[type="password"] {
+			width: 220px;
+			padding: 8px;
+			box-sizing: border-box;
+		}
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+        button {
+            margin: 5px;
+        }
+        #output {
+            margin-top: 15px;
+            color: green;
+            font-weight: bold;
+        }
+        a {
+            color: blue;
+        }
+    </style>
+</head>
+<body style="background-color:darkcyan;">
+<div class="login-box">
+    <h2>Student | Faculty<br>Login Portal</h2>
+    <p>Listen to login instructions:</p>
+    <audio controls>
+        <source src="/audio/sample.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <h4>Select Your Role:</h4>
+    <input type="radio" name="role" value="Student" checked>
+    Student
+    <input type="radio" name="role" value="Faculty">
+    Faculty
+    <p>
+        <label>Username:</label><br>
+        <input type="text" id="username" placeholder="Enter username or email">
+        <br>
+        <span id="usernameError" class="error"></span>
+    </p>
+    <p>
+        <label>Password:</label><br>
+        <input type="password" id="password" placeholder="Enter your password">
+        <br>
+        <span id="passwordError" class="error"></span>
+    </p>
+    <p>
+        <input type="checkbox" id="remember">
+        Remember Me
+    </p>
+    <button type="button" onclick="login()">Login</button>
+    <button type="button" onclick="clearData()">Clear</button>
+    <div id="output"></div>
+    <br>
+    <p>
+        <a href="#">Forgot Password?</a> |
+        <a href="#">Create New Account</a>
+    </p>
+</div>
+<script>
+function login() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    document.getElementById("usernameError").innerHTML = "";
+    document.getElementById("passwordError").innerHTML = "";
+    document.getElementById("output").innerHTML = "";
+    if (username == "") {
+        document.getElementById("usernameError").innerHTML = "Please enter username";
+    }
+    if (password == "") {
+        document.getElementById("passwordError").innerHTML = "Please enter password";
+    }
+    if (username == "" || password == "") {
+        return;
+    }
+    var role = document.querySelector('input[name="role"]:checked').value;
+    document.getElementById("output").innerHTML =
+        "Login successful! Welcome " + role + " " + username;
+}
+function clearData() {
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+    document.getElementById("usernameError").innerHTML = "";
+    document.getElementById("passwordError").innerHTML = "";
+    document.getElementById("output").innerHTML = "";
+}
+</script>
+</body>
+</html>

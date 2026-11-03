@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+        }
+        .box {
+            width: 400px;
+            margin: 100px auto;
+            padding: 25px;
+            background-color: white;
+            border: 1px solid gray;
+            border-radius: 10px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2 style="text-align:center;">Student Registration Form</h2>
+        <form onsubmit="return validateForm()">
+            <label>Student Name:</label>
+            <input type="text" id="name">
+            <div id="nameError" class="error"></div>
+            <br>
+            <label>Email ID:</label>
+            <input type="text" id="email">
+            <div id="emailError" class="error"></div>
+            <br>
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female
+            <input type="radio" name="gender" value="Other"> Other
+            <div id="genderError" class="error"></div>
+            <br>
+            <label>Skills:</label>
+            <input type="checkbox" name="skill" value="HTML"> HTML
+            <input type="checkbox" name="skill" value="CSS"> CSS
+            <input type="checkbox" name="skill" value="JavaScript"> JavaScript
+            <div id="skillError" class="error"></div>
+            <br>
+            <input type="submit" value="Register">
+        </form>
+        <div id="output"></div>
+    </div>
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let genders = document.getElementsByName("gender");
+            let skills = document.getElementsByName("skill");
+            let namePattern = /^[A-Za-z ]+$/;
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let valid = true;
+            document.getElementById("nameError").innerHTML = "";
+            document.getElementById("emailError").innerHTML = "";
+            document.getElementById("genderError").innerHTML = "";
+            document.getElementById("skillError").innerHTML = "";
+            document.getElementById("output").innerHTML = "";
+            if (name == "" || !namePattern.test(name)) {
+                document.getElementById("nameError").innerHTML = "Enter a valid name.";
+                valid = false;
+            }
+            if (email == "" || !emailPattern.test(email)) {
+                document.getElementById("emailError").innerHTML = "Enter a valid email ID.";
+                valid = false;
+            }
+            let genderSelected = false;
+            for (let i = 0; i < genders.length; i++) {
+                if (genders[i].checked) {
+                    genderSelected = true;
+                    break;
+                }
+            }
+            if (!genderSelected) {
+                document.getElementById("genderError").innerHTML = "Please select a gender.";
+                valid = false;
+            }
+            let skillSelected = false;
+            for (let i = 0; i < skills.length; i++) {
+                if (skills[i].checked) {
+                    skillSelected = true;
+                    break;
+                }
+            }
+            if (!skillSelected) {
+                document.getElementById("skillError").innerHTML = "Please select at least one skill.";
+                valid = false;
+            }
+            if (valid) {
+                document.getElementById("output").innerHTML = "<h3>Registration Successful</h3>";
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
