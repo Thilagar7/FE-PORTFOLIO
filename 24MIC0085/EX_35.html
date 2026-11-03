@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ATM PIN Entry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:navy;
+            text-align: center;
+            margin-top: 100px;
+        }
+        .atm {
+            background-color: white;
+            width: 350px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        input {
+            width: 200px;
+            padding: 10px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        #warning {
+            margin-top: 10px;
+            color: red;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="atm">
+        <h2>ATM PIN Entry</h2>
+        <p>Enter your 4-digit PIN</p>
+        <input type="password" id="pin" maxlength="4">
+        <div id="message"></div>
+        <div id="warning"></div>
+    </div>
+    <script>
+        const pin = document.getElementById("pin");
+        const message = document.getElementById("message");
+        const warning = document.getElementById("warning");
+		
+        pin.addEventListener("keydown", function(event) {
+            message.textContent = "PIN Entry Started";
+            warning.textContent = "";
+            if (event.key === "Enter") {
+                message.textContent = "PIN Submitted Successfully";
+            }
+            if (
+                event.key !== "Enter" &&
+                event.key !== "Backspace" &&
+                event.key !== "Delete" &&
+                event.key !== "Tab" &&
+                !/^[0-9]$/.test(event.key)
+            ) {
+                warning.textContent = "Warning: Please enter numbers only!";
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

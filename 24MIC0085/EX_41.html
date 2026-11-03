@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>Student Login</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #fff8f0;
+            font-family: Arial;
+        }
+        header {
+            background-color: #8e44ad;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .main {
+            padding: 40px;
+        }
+        .box {
+            background-color: white;
+            padding: 25px;
+            border: 2px solid #8e44ad;
+            border-radius: 15px;
+        }
+        h2 {
+            color: #8e44ad;
+            text-align: center;
+        }
+        footer {
+            background-color: #8e44ad;
+            color: white;
+            text-align: center;
+            padding: 12px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>College Events 2026</h1>
+    </header>
+    <nav class="navbar navbar-dark bg-secondary">
+        <div class="container justify-content-center">
+            <a class="nav-link text-white mx-3" href="#">Home</a>
+            <a class="nav-link text-white mx-3" href="#">Events</a>
+            <a class="nav-link text-white mx-3" href="#">Gallery</a>
+            <a class="nav-link text-white mx-3" href="#">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container main">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="box">
+                    <h2>Login</h2>
+                    <label class="form-label">Username/Email</label>
+                    <input type="text"
+                           class="form-control mb-3"
+                           placeholder="Enter username">
+
+                    <label class="form-label">Password</label>
+                    <input type="password"
+                           class="form-control mb-3"
+                           placeholder="Enter password">
+
+                    <button class="btn btn-dark w-100">
+                        Login
+                    </button>
+
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="box">
+
+                    <h2>Register</h2>
+
+                    <label class="form-label">Full Name</label>
+                    <input type="text"
+                           class="form-control mb-2"
+                           placeholder="Enter full name">
+
+                    <label class="form-label">Email</label>
+                    <input type="email"
+                           class="form-control mb-2"
+                           placeholder="Enter email">
+
+                    <label class="form-label">Password</label>
+                    <input type="password"
+                           class="form-control mb-2"
+                           placeholder="Enter password">
+
+                    <label class="form-label">Confirm Password</label>
+                    <input type="password"
+                           class="form-control mb-3"
+                           placeholder="Confirm password">
+
+                    <button class="btn btn-success w-100">
+                        Register
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        © 2026 College Events
+    </footer>
+
+</body>
+</html>

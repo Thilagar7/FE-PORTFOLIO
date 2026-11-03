@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>Cart Summary</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightgray;
+        }
+        .container {
+            width: 700px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: blue;
+        }
+        h2 {
+            color: darkblue;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: blue;
+            color: white;
+        }
+        .total {
+            font-weight: bold;
+        }
+		.buttons {
+			margin-top: 20px;
+		}
+		.button {
+			display: inline-block;
+			width: 125px;
+			height: 40px;
+			padding: 0;
+			box-sizing: border-box;
+
+			background-color: blue;
+			color: white;
+			text-decoration: none;
+			border: none;
+			cursor: pointer;
+
+			font-family: Arial;
+			font-size: 16px;
+			text-align: center;
+			line-height: 40px;
+			margin-right: 5px;
+		}
+
+		button.button {
+			line-height: normal;
+		}
+			.cancel {
+			background-color: red;
+		}
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Shopping Cart Checkout</h1>
+    <h2>Part C - Cart Summary</h2>
+    <table
+        <tr>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total Amount</th>
+        </tr>
+        <tr>
+            <td>Wireless Headphones</td>
+            <td>1</td>
+            <td>₹1499</td>
+            <td>₹1499</td>
+        </tr>
+        <tr>
+            <td>USB Cable</td>
+            <td>2</td>
+            <td>₹299</td>
+            <td>₹598</td>
+        </tr>
+        <tr class="total">
+            <td colspan="3">Grand Total</td>
+            <td>₹2097</td>
+        </tr>
+    </table>
+    <div class="buttons">
+    <a href="payment.html" class="button">
+        Previous
+    </a>
+    <button class="button"
+            onclick="alert('Order Placed Successfully!')">
+        Place Order
+    </button>
+    <button class="button cancel"
+            onclick="alert('Order Cancelled!')">
+        Cancel
+    </button>
+	</div>
+
+</div>
+
+</body>
+</html>

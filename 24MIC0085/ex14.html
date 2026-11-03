@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Smart search engine</title>
+	<style>
+        body{
+            margin:0;
+            font-family:"Times New Roman", Times, serif;
+        }
+        .header{
+            background:DarkCyan;
+            color:white;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:15px 30px;
+        }
+        .header h1{
+            margin:0;
+            font-size:30px;
+        }
+        .search-area{
+            display:flex;
+			border-style:none;
+			color:black;
+            align-items:center;
+            gap:10px;
+        }
+        .search-area input,
+        .search-area select{
+            padding:8px;
+            border:1px solid #ccc;
+            border-radius:5px;
+            font-size:13px;
+        }
+        .search-area input{
+            width:300px;
+        }
+        .search-area button{
+            padding:10px 20px;
+            background:teal;
+            color:white;
+            border:none;
+            border-radius:6px;
+            cursor:pointer;
+            font-size:15px;
+        }
+        .search-area button:hover{
+            background:navy;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1>Smart Search Engine</h1>
+    <div class="search-area">
+        <input type="text"
+        placeholder="Search products, services, or articles...">
+        <select>
+            <option>All categories</option>
+            <option>Electronics</option>
+            <option>Books</option>
+            <option>Clothing</option>
+            <option>Groceries</option>
+        </select>
+        <select>
+            <option>Any price</option>
+            <option>Under ₹500</option>
+            <option>₹500–₹2,000</option>
+            <option>Above ₹2,000</option>
+        </select>
+        <button>Search</button>
+    </div>
+
+</div>
+</body>
