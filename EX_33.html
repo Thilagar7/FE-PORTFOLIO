@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mouse Event Handling</title>
+<style>
+button {
+    padding: 10px 20px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px navy;
+}
+</style>
+</head>
+<body style="text-align:center;">
+
+<h1 id="text"  >Welcome to My Webpage</h1>
+
+<button class=button onmouseover="changeText()" onmouseout="restoreText()">
+Button
+</button>
+
+<script>
+function changeText() {
+    document.getElementById("text").innerHTML = "Welcome to VIT!";
+}
+
+function restoreText() {
+    document.getElementById("text").innerHTML = "Welcome to My Webpage";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<html>
+<head>
+    <title>Patient Registration Form</title>
+
+    <style>
+
+        body {
+            background-color:darkblue;
+            font-family: Georgia, serif;
+        }
+        .form {
+            width: 600px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: white;
+            border: 2px solid #ff99bb;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px gray;
+        }
+        h2 {
+            text-align: center;
+            color: #c2185b;
+        }
+        input, select, textarea {
+            padding: 7px;
+            margin: 5px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border: 2px solid #c2185b;
+        }
+
+        input[type="submit"] {
+            background-color: #c2185b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+        }
+
+        input[type="reset"] {
+            background-color: #777;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="form">
+    <h2>Patient Registration Form</h2>
+    <form>
+        <label>Patient Name:</label>
+        <input type="text" name="name">
+        <br><br>
+        <label>Email:</label>
+        <input type="email" name="email">
+        <br><br>
+        <label>Password:</label>
+        <input type="password" name="password">
+        <br><br>
+        <label>Contact Number:</label>
+        <input type="tel" name="phone">
+        <br><br>
+        <label>Age:</label>
+        <input type="number" name="age">
+        <br><br>
+        <label>Date of Birth:</label>
+        <input type="date" name="dob">
+        <br><br>
+        <label>Appointment Time:</label>
+        <input type="time" name="time">
+        <br><br>
+        <label>Appointment Date & Time:</label>
+        <input type="datetime-local" name="datetime">
+        <br><br>
+		<label>Website:</label>
+        <input type="url" name="website">
+        <br><br>
+        <label>Search Doctor:</label>
+        <input type="search" name="doctor">
+        <br><br>
+        <label>Favorite Color:</label>
+        <input type="color" name="color">
+        <br><br>
+        <label>Medical Record:</label>
+        <input type="file" name="record">
+        <br><br>
+        <label>Pain Level:</label>
+        <input type="range" min="0" max="10">
+        <br><br>
+        <label>Gender:</label>
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female
+        <input type="radio" name="gender"> Other
+        <br><br>
+        <label>Known Allergies:</label>
+        <input type="checkbox"> Dust
+        <input type="checkbox"> Food
+        <input type="checkbox"> Medicine
+        <br><br>
+
+        <label>Blood Group:</label>
+        <select>
+            <option>Select</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>O+</option>
+            <option>O-</option>
+        </select>
+        <br><br>
+
+        <label>Address:</label>
+        <br>
+        <textarea rows="4" cols="40"></textarea>
+        <br><br>
+
+        <input type="hidden" value="P001">
+
+        <input type="submit" value="Register">
+
+        <input type="reset" value="Reset">
+
+        <input type="image"
+              src="IMAGES/pay.png"
+               width="100"
+               height="40"
+               alt="Pay Now">
+    </form>
+</div>
+</body>
+</html>

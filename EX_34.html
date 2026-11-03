@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        input {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #keyMessage, #searchMessage {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Search</h1>
+    <input type="text" id="studentInput" placeholder="Enter student name">
+
+    <div id="keyMessage"></div>
+    <div id="searchMessage"></div>
+    <script>
+        const input = document.getElementById("studentInput");
+        const keyMessage = document.getElementById("keyMessage");
+        const searchMessage = document.getElementById("searchMessage");
+
+        input.addEventListener("keydown", function(event) {
+            keyMessage.textContent = "Key pressed: " + event.key;
+            if (event.key === "Enter") {
+                searchMessage.textContent = "Searching for students....";
+            }
+            if (event.key === "Escape") {
+                input.value = "";
+                keyMessage.textContent = "";
+                searchMessage.textContent = "";
+            }
+        });
+    </script>
+
+</body>
+</html>
