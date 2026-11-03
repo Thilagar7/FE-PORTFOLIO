@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Interactive Product Card</title>
+<style>
+body {
+    font-family: Arial;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+.card {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+}
+#productImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+#info {
+    display: none;
+    margin: 15px;
+    color: #555;
+}
+button {
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <img id="productImage" src="IMAGES/watch.jpg" alt="Product">
+    <h2>Smart Watch</h2>
+
+    <div id="info">
+        Heart-rate monitor, fitness tracking, and Bluetooth connectivity.
+    </div>
+
+    <button onclick="viewDetails()">View Details</button>
+    <p id="details"></p>
+</div>
+
+<script>
+let image = document.getElementById("productImage");
+let info = document.getElementById("info");
+
+image.onmouseover = function() {
+    image.style.transform = "scale(1.1)";
+    image.style.filter = "brightness(80%)";
+    info.style.display = "block";
+};
+
+image.onmouseout = function() {
+    image.style.transform = "scale(1)";
+    image.style.filter = "brightness(100%)";
+    info.style.display = "none";
+};
+
+function viewDetails() {
+    document.getElementById("details").innerHTML =
+        "Price: ₹2,999<br>Availability: In Stock";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Travel Photo Gallery</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #eef3f8;
+            text-align: center;
+            margin: 0;
+        }
+        .header {
+            background-color: #29465b;
+            color: white;
+            padding: 20px;
+        }
+        .gallery {
+            width: 650px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px gray;
+        }
+        img {
+            width: 600px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .instructions {
+            margin: 20px;
+            color: #555;
+        }
+        #place {
+            font-size: 18px;
+            font-weight: bold;
+            color: #287a4b;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Travel Gallery</h1>
+    </div>
+    <div class="gallery">
+        <img id="travelImage" src="IMAGES/image1.png">
+        <div class="instructions">
+            N - Next Destination |
+            P - Previous Destination |
+            Spacebar - Show Destination
+        </div>
+
+        <div id="place"></div>
+
+    </div>
+    <script>
+        var images = [
+            "IMAGES/image1.png",
+            "IMAGES/image2.png",
+            "IMAGES/image3.png"
+        ];
+        var places = [
+            "Gandhi Block",
+            "Pear Research Park",
+            "Technology Tower"
+        ];
+        var current = 0;
+        document.addEventListener("keydown", function(event) {
+            if (event.key == "n" || event.key == "N") {
+                current++;
+                if (current >= images.length) {
+                    current = 0;
+                }
+
+                document.getElementById("travelImage").src =
+                    images[current];
+
+                document.getElementById("place").innerHTML = "";
+            }
+            else if (event.key == "p" || event.key == "P") {
+                current--;
+                if (current < 0) {
+                    current = images.length - 1;
+                }
+                document.getElementById("travelImage").src =
+                    images[current];
+
+                document.getElementById("place").innerHTML = "";
+            }
+
+            else if (event.code == "Space") {
+
+                document.getElementById("place").innerHTML =
+                    places[current];
+            }
+        });
+    </script>
+</body>
+</html>

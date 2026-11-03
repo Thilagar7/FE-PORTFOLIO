@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course Registration Form</title>
+    <style>
+		.h2{
+			text-align:center;
+			color:purple;
+		}
+        .box {
+            width: 400px;
+            margin: 110px auto;
+            padding: 20px;
+            border: 2px solid black;
+			background-color:white;
+        }
+        input, select {
+            margin: 8px;
+        }
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body style="background-color:purple;">
+<div class="box">
+    <h2 class="h2">Course Registration Form</h2>
+    <label>Student Name:</label>
+    <input type="text" id="name"><br>
+    <label>Department:</label>
+    <select id="department">
+        <option value="">Select Department</option>
+        <option>CSE</option>
+        <option>IT</option>
+        <option>ECE</option>
+        <option>EEE</option>
+    </select><br>
+    <label>Programming Languages:</label><br>
+    <select id="languages" multiple style="width:150px;height:80px;">
+		<option>Java</option>
+		<option>Python</option>
+		<option>JavaScript</option>
+		<option>C++</option>
+	</select><br><br>
+    <div style="text-align:center;">
+		<button onclick="register()">Register</button>
+	</div>
+    <div id="output"></div>
+</div>
+<script>
+function register() {
+    let name = document.getElementById("name").value.trim();
+    let department = document.getElementById("department").value;
+    let languages = document.getElementById("languages");
+    let selected = [];
+    let pattern = /^[A-Za-z ]+$/;
+    for (let i = 0; i < languages.options.length; i++) {
+        if (languages.options[i].selected) {
+            selected.push(languages.options[i].value);
+        }
+    }
+    if (name == "") {
+        document.getElementById("output").innerHTML = "<p style='color:red'>Please enter Student Name</p>";
+        return;
+    }
+    if (!pattern.test(name)) {
+        document.getElementById("output").innerHTML = "<p style='color:red'>Student Name must contain only alphabets and spaces</p>";
+        return;
+    }
+    if (department == "") {
+        document.getElementById("output").innerHTML = "<p style='color:red'>Please select Department</p>";
+        return;
+    }
+    if (selected.length == 0) {
+        document.getElementById("output").innerHTML = "<p style='color:red'>Please select at least one Programming Language</p>";
+        return;
+    }
+    document.getElementById("output").innerHTML =
+        "<h3>Registration Details</h3>" +
+        "Student Name: " + name + "<br>" +
+        "Department: " + department + "<br>" +
+        "Programming Languages: " + selected.join(", ");
+}
+</script>
+</body>
+</html>
