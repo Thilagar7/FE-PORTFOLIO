@@ -47,7 +47,7 @@
     </div>
 
     <div class="viewer">
-        <img id="campusImage" src="images/image1.png">
+        <img id="campusImage" src="IMAGES/image1.png">
         <div class="instructions">
             Left Arrow - Previous Image |
             Right Arrow - Next Image |
@@ -56,30 +56,30 @@
         <div id="message"></div>
     </div>
     <script>
-        var images = [
-            "images/image1.png",
-            "images/image2.png",
-            "images/image3.png"
+        var IMAGES = [
+            "IMAGES/image1.png",
+            "IMAGES/image2.png",
+            "IMAGES/image3.png"
         ];
         var current = 0;
         document.addEventListener("keydown", function(event) {
             if (event.key == "ArrowRight") {
                 current++;
-                if (current >= images.length) {
+                if (current >= IMAGES.length) {
                     current = 0;
                 }
                 document.getElementById("campusImage").src =
-                    images[current];
+                    IMAGES[current];
                 document.getElementById("message").innerHTML = "";
             }
             else if (event.key == "ArrowLeft") {
                 current--;
 
                 if (current < 0) {
-                    current = images.length - 1;
+                    current = IMAGES.length - 1;
                 }
                 document.getElementById("campusImage").src =
-                    images[current];
+                    IMAGES[current];
 
                 document.getElementById("message").innerHTML = "";
             }
