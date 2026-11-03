@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Registration</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightgray;
+        }
+        .container {
+            width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+        }
+        h2 {
+            text-align: center;
+            color: darkblue;
+        }
+        input, select {
+            padding: 8px;
+            margin: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        input[type="tel"],
+        select {
+            width: 350px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px; }
+        th, td {
+            border: 1px solid black;
+            padding: 8px; }
+        th {
+            background-color: darkblue;
+            color: white;	}
+        button {
+            padding: 10px 20px;
+            background-color: darkblue;
+            color: white;
+            border: none; }
+        video {
+            width: 400px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Employee Registration Page</h2>
+    <h3>Welcome Video</h3>
+    <video controls>
+        <source src="/VIDEOS/INTRO.mp4" type="video/mp4">
+    </video>
+    <hr>
+    <h3>Registration Form</h3>
+    <form id="form">
+        Full Name:<br>
+        <input type="text" id="name" placeholder="Enter name" minlength="3" maxlength="50">
+        <br>
+        Employee ID:<br>
+        <input type="text" id="empid" placeholder="EMP-1234" pattern="EMP-[0-9]{4}">
+        <br>
+        Email Address:<br>
+        <input type="email" id="email" placeholder="name@company.com">
+        <br>
+        Password:<br>
+        <input type="password" id="password" placeholder="Minimum 8 characters" minlength="8">
+        <br>
+        Confirm Password:<br>
+        <input type="password" id="confirm" placeholder="Re-enter password">
+        <br>
+        Date of Birth:<br>
+        <input type="date" id="dob">
+        <br>
+        Gender:<br>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <input type="radio" name="gender" value="Other"> Other
+        <br><br>
+        Department:<br>
+        <select id="department">
+            <option value="">Select Department</option>
+            <option>Human Resources</option>
+            <option>IT Support</option>
+            <option>Engineering</option>
+            <option>Sales</option>
+        </select>
+        <br>
+        Skills:<br>
+        <input type="checkbox" name="skill" value="HTML"> HTML
+        <input type="checkbox" name="skill" value="CSS"> CSS
+        <input type="checkbox" name="skill" value="JavaScript"> JavaScript
+        <br><br>
+        Mobile Number:<br>
+        <input type="tel" id="mobile" placeholder="10 digit number" pattern="[0-9]{10}" maxlength="10">
+        <br>
+        Upload Profile Photo:<br>
+        <input type="file" id="photo" accept="image/*">
+        <br><br>
+        <button type="button" onclick="displayData()">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+    <div id="result"></div>
+</div>
+<script>
+function displayData() {
+    var name = document.getElementById("name").value;
+    var empid = document.getElementById("empid").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var confirm = document.getElementById("confirm").value;
+    var dob = document.getElementById("dob").value;
+    var department = document.getElementById("department").value;
+    var mobile = document.getElementById("mobile").value;
+    var photo = document.getElementById("photo").value;
+    var gender = document.querySelector('input[name="gender"]:checked');
+    if (name == "" || empid == "" || email == "" || password == "" || confirm == "" || dob == "" || gender == null || department == "" || mobile == "" || photo == "") {
+        alert("Please fill all the fields");
+        return;
+    }
+    if (password != confirm) {
+        alert("Passwords do not match");
+        return;
+    }
+    var skills = document.querySelectorAll('input[name="skill"]:checked');
+    var skillText = "";
+    for (var i = 0; i < skills.length; i++) {
+        skillText = skillText + skills[i].value + " ";
+    }
+    document.getElementById("result").innerHTML =
+        "<h3>Employee Details</h3>" +
+        "<table>" +
+        "<tr><th>Field</th><th>Value</th></tr>" +
+        "<tr><td>Full Name</td><td>" + name + "</td></tr>" +
+        "<tr><td>Employee ID</td><td>" + empid + "</td></tr>" +
+        "<tr><td>Email</td><td>" + email + "</td></tr>" +
+        "<tr><td>Password</td><td>" + password + "</td></tr>" +
+        "<tr><td>Date of Birth</td><td>" + dob + "</td></tr>" +
+        "<tr><td>Gender</td><td>" + gender.value + "</td></tr>" +
+        "<tr><td>Department</td><td>" + department + "</td></tr>" +
+        "<tr><td>Skills</td><td>" + skillText + "</td></tr>" +
+        "<tr><td>Mobile Number</td><td>" + mobile + "</td></tr>" +
+        "<tr><td>Profile Photo</td><td>" + photo + "</td></tr>" +
+        "</table>";
+}
+</script>
+</body>
+</html>

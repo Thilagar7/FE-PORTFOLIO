@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Details</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightgray;
+        }
+        .container {
+            width: 700px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: blue;
+        }
+        h2 {
+            color: darkblue;
+            text-align: center;
+        }
+        .payment-method {
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+        .payment-method input {
+            width: auto;
+        }
+        .payment-row {
+            margin-bottom: 20px;
+        }
+        .payment-row label {
+            display: inline-block;
+            width: 170px;
+        }
+        .payment-row input {
+            width: 450px;
+            padding: 8px;
+        }
+        .terms input {
+            width: auto;
+        }
+        .button {
+            background-color: blue;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Shopping Cart Checkout</h1>
+
+    <h2>Part B - Payment Details</h2>
+
+    <form>
+
+        <label>Payment Method:</label>
+        <div class="payment-method">
+            <input type="radio" name="payment">
+            Credit Card
+            <br><br>
+            <input type="radio" name="payment">
+            Debit Card
+            <br><br>
+            <input type="radio" name="payment">
+            UPI
+            <br><br>
+            <input type="radio" name="payment">
+            Net Banking
+            <br><br>
+            <input type="radio" name="payment">
+            Cash on Delivery
+
+        </div>
+
+
+        <div class="payment-row">
+            <label>Card Holder Name:</label>
+            <input type="text">
+        </div>
+
+
+        <div class="payment-row">
+            <label>Card Number:</label>
+            <input type="text"
+                   placeholder="1234 5678 9012 3456">
+        </div>
+
+        <div class="payment-row">
+            <label>Expiry Date:</label>
+            <input type="month">
+        </div>
+        <div class="payment-row">
+            <label>CVV:</label>
+            <input type="password">
+        </div>
+        <div class="payment-row">
+            <label>UPI ID:</label>
+            <input type="text"
+                   placeholder="example@upi">
+        </div>
+        <div class="terms">
+            <input type="checkbox" required>
+            I agree to the Terms and Conditions
+        </div>
+        <br>
+        <a href="customer.html" class="button">
+            Previous
+        </a>
+        <a href="cart.html" class="button" style="float:right;">
+            Next: Cart Summary
+        </a>
+		</div>
+	
+    </form>
+
+
+</body>
+</html>

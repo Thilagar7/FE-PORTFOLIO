@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>GameZone</title>
+    <style>
+        body{
+            margin:0;
+            font-family:"Times New Roman", Times, serif;
+        }
+		header{
+			background-color:#222;
+			color:white;
+			display:flex;
+			justify-content:space-between;
+			align-items:center;
+			padding:15px 30px;
+			position:fixed;
+			top:0;
+			left:0;
+			right:0;
+		}
+		.logo-area{
+			display:flex;
+			align-items:center;
+		}
+		.logo img{
+			width:80px;
+			height:80px;
+			border-radius:50%;
+			object-fit:cover;
+		}
+		.logo-area h2{
+			color:white;
+			margin-left:10px;
+			font-size:30px;
+		}
+        nav{
+            display:flex;
+            align-items:center;
+        }
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin:15px;			
+            font-size:18px;
+        }
+        nav a:hover{
+            color:papayawhip;
+        }
+        .play{
+            background-color:green;
+            color:white;
+            text-decoration:none;
+            padding:10px 20px;
+            border-radius:5px;
+        }
+
+        .play:hover{
+            background-color:saddlebrown;
+        }
+        .banner{
+            background-image:url("images/games.png");
+            background-size:cover;
+            background-position:center;
+            height:70vh;
+            margin-top:70px;
+            text-align:center;
+            color:white;
+            padding-top:140px;
+        }
+        .banner h1{
+            font-size:40px;
+        }
+        .banner p{
+            font-size:22px;
+        }
+		.banner h1,
+		.banner p{
+			text-shadow:4px 4px 4px black;
+		}
+        .explore{
+            background-color:green;
+            color:white;
+            text-decoration:none;
+            padding:12px 25px;
+            border-radius:5px;
+        }
+        .explore:hover{
+            background-color:darkgreen;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo-area">
+    <div class="logo">
+        <img src="images/gamelogo.png" alt="GameZone Logo">
+    </div>
+    <h2>GameZone</h2>
+</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Games</a>
+        <a href="#">Tournaments</a>
+        <a href="#">News</a>
+        <a href="#">Contact</a>
+        <a href="#"class="play">Play Now</a>
+    </nav>
+</header>
+<div class="banner">
+    <h1>Level Up Your Gaming Experience</h1>
+    <p>Join exciting tournaments and explore the latest games.</p>
+    <a href="#" class="explore">Explore Games</a>
+</div>
+</body>
+</html>

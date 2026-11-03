@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+			background-color:white;
+			color:black;
+            text-align: center;
+            margin-top: 100px;
+        }
+        input {
+            width: 300px;
+            padding: 12px;
+            font-size: 18px;
+            border: 2px solid #333;
+            border-radius: 5px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Product Search</h2>
+    <input type="text" id="productInput" placeholder="Enter product name">
+    <div id="result"></div>
+    <script>
+        const input = document.getElementById("productInput");
+        const result = document.getElementById("result");
+        input.addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                result.textContent = "Searching for: " + input.value;
+            } else {
+                result.textContent = "Entered text: " + input.value;
+                input.style.backgroundColor = 'pink';
+            }
+        });
+    </script>
+</body>
+</html>
